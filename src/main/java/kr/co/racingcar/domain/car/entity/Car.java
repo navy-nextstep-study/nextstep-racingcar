@@ -1,9 +1,20 @@
 package kr.co.racingcar.domain.car.entity;
 
 public class Car {
+    private static final int NAME_MAX_LENGTH = 5;
+
+    private String carName;
+
+    public Car(String carName) {
+        validateCarNameNull(carName);
+        validateCarNameBlank(carName);
+        validateCarNameLength(carName);
+        this.carName = carName;
+    }
+
     public void validateCarNameLength(String input) {
-        if (input.length() > 5) {
-            throw new IllegalArgumentException("자동차 이름은 5글자를 넘을 수 없습니다.");
+        if (input.length() > NAME_MAX_LENGTH) {
+            throw new IllegalArgumentException(String.format("자동차 이름은 %s글자를 넘을 수 없습니다.", NAME_MAX_LENGTH));
         }
     }
 
