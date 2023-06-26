@@ -1,4 +1,4 @@
-package kr.co.racingcar.domain.car;
+package kr.co.racingcar.domain.car.entity;
 
 public class Car {
     public void validateCarNameLength(String input) {

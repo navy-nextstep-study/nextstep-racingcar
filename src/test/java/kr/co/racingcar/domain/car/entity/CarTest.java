@@ -1,4 +1,4 @@
-package kr.co.racingcar.domain.car;
+package kr.co.racingcar.domain.car.entity;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
