@@ -1,6 +1,6 @@
 package kr.co.racingcar;
 
-public class Main {
+public class RacingCarApplication {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
