@@ -1,4 +1,4 @@
-package kr.co.racingcar.domain.car.entity;
+package kr.co.racingcar.domain;
 
 public class Car {
     private static final int NAME_MAX_LENGTH = 5;
@@ -19,13 +19,13 @@ public class Car {
     }
 
     public void validateCarNameBlank(String input) {
-        if(input.isBlank()){
+        if (input.isBlank()) {
             throw new IllegalArgumentException("자동차 이름이 빈문자열이거나 공백입니다.");
         }
     }
 
     public void validateCarNameNull(String input) {
-        if(input == null){
+        if (input == null) {
             throw new IllegalArgumentException("자동차 이름이 Null 입니다.");
         }
     }

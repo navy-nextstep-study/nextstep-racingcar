@@ -1,5 +1,6 @@
 package kr.co.racingcar.domain.car.entity;
 
+import kr.co.racingcar.domain.Car;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -10,7 +11,7 @@ class CarTest {
 
     @ParameterizedTest
     @CsvSource(value = {"Seven77", "nine99999"})
-    void validateCarNameLength_자동차_이름이_5글자_이상_IllegalArgumentException(String input){
+    void validateCarNameLength_자동차_이름이_5글자_이상_IllegalArgumentException(String input) {
         //given & when & then
         assertThatThrownBy(() -> new Car(input))
                 .isInstanceOf(IllegalArgumentException.class)
