@@ -3,7 +3,7 @@ package kr.co.racingcar.domain;
 public class Car {
     private static final int NAME_MAX_LENGTH = 5;
 
-    private String carName;
+    private final String carName;
     private int position;
 
     public Car(String carName) {
@@ -14,8 +14,16 @@ public class Car {
         this.position = 0;
     }
 
+    public void move() {
+        this.position += 1;
+    }
+
     public String getCarName() {
         return carName;
+    }
+
+    public int getPosition() {
+        return this.position;
     }
 
     private void validateCarNameLength(String input) {

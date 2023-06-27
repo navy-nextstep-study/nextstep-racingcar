@@ -5,9 +5,21 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class CarTest {
+
+    @Test
+    void move_이동_PASS(){
+        //given
+        Car car = new Car("car");
+
+        //when
+        car.move();
+
+        assertThat(car.getPosition()).isEqualTo(1);
+    }
 
     @ParameterizedTest
     @CsvSource(value = {"Seven77", "nine99999"})
