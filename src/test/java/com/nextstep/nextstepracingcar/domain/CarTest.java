@@ -20,7 +20,7 @@ public class CarTest {
     @ParameterizedTest
     @CsvSource(value = {"volvo:8", "kia:5", "benz:7"}, delimiter = ':')
     @DisplayName("자동차 객체를 생성해서 랜덤 값을 주었을 때 5이상인 숫자인 경우 값이 증가한다.")
-    void 정상적인_경우2(String carName, byte randomNum) {
+    void 정상적인_경우2(String carName, int randomNum) {
         // given
         Name name = new Name(carName);
         Move move = new Move();
@@ -30,7 +30,7 @@ public class CarTest {
         car.move.plusMove(randomNum);
 
         // then
-        assertThat(car.move.getMove()).isEqualTo((byte) 1);
+        assertThat(car.move.getPosition()).isEqualTo(1);
     }
 
     @ParameterizedTest

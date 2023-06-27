@@ -3,15 +3,15 @@ package com.nextstep.nextstepracingcar.domain;
 class Move {
 
     private final static byte MOVE_REFERENCE_VALUE = 4;
-    private byte move = 0;
+    private int position = 0;
 
-    public void plusMove(byte randomNum) {
+    public void plusMove(int randomNum) {
         if (checkForwardCondition(randomNum)) {
-            this.move++;
+            this.position++;
         }
     }
 
-    private boolean checkForwardCondition(byte randomNum) {
+    private boolean checkForwardCondition(int randomNum) {
         if (randomNum >= MOVE_REFERENCE_VALUE) {
             return true;
         }
@@ -19,7 +19,7 @@ class Move {
         return false;
     }
 
-    public byte getMove() {
-        return move;
+    public int getPosition() {
+        return position;
     }
 }
