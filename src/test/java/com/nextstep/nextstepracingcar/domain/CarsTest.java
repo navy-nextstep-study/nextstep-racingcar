@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class CarsTest {
 
     @Test
-    @DisplayName("게임을 진행하는 앱이 정상적으로 생성된다.")
+    @DisplayName("자동차들의 정보를 가지고 있는 객체가 정상적으로 생성된다.")
     void 정상적인_케이스1() {
         List<Car> carlist = List.of(
                 new Car(new Name("benz"), new Move()),
