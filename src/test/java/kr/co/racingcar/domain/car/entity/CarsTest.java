@@ -13,9 +13,9 @@ public class CarsTest {
         Cars cars = new Cars("one1,two2,three");
 
         //then
-        assertThat(cars.get(0).getCarName()).isEqualTo("one1");
-        assertThat(cars.get(1).getCarName()).isEqualTo("two2");
-        assertThat(cars.get(2).getCarName()).isEqualTo("three");
-        assertThat(cars.size()).isEqualTo(3);
+        assertThat(cars.getCars().size()).isEqualTo(3);
+        assertThat(cars.getCars().get(0).getCarName()).isEqualTo("one1");
+        assertThat(cars.getCars().get(1).getCarName()).isEqualTo("two2");
+        assertThat(cars.getCars().get(2).getCarName()).isEqualTo("three");
     }
 }
