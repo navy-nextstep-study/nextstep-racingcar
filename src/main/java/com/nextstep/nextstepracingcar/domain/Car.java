@@ -1,9 +1,9 @@
 package com.nextstep.nextstepracingcar.domain;
 
-class Car {
+public class Car {
 
-    Name name;
-    Move move;
+    private final Name name;
+    private final Move move;
 
     public Car(Name name, Move move) {
         this.name = name;

@@ -1,6 +1,6 @@
 package com.nextstep.nextstepracingcar.domain;
 
-class Move {
+public class Move {
 
     private final static byte MOVE_REFERENCE_VALUE = 4;
     private int position = 0;

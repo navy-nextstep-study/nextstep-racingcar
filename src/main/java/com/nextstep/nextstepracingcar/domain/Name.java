@@ -1,7 +1,6 @@
 package com.nextstep.nextstepracingcar.domain;
 
-class Name {
-
+public class Name {
 
     private String name;
 

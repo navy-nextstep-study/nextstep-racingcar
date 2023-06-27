@@ -26,10 +26,10 @@ public class CarTest {
         Car car = new Car(name, move);
 
         // when
-        car.move.plusMove(randomNum);
+        car.getMove().plusMove(randomNum);
 
         // then
-        assertThat(car.move.getPosition()).isEqualTo(1);
+        assertThat(car.getMove().getPosition()).isEqualTo(1);
     }
 
 }

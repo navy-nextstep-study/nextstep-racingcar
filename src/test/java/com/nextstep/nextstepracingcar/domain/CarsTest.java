@@ -39,7 +39,7 @@ public class CarsTest {
 
         // then
         for (Car car : cars.getCars()) {
-            assertThat(car.move.getPosition()).isIn(0, 1);
+            assertThat(car.getMove().getPosition()).isIn(0, 1);
         }
     }
 }

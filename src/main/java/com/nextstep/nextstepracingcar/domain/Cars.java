@@ -1,10 +1,12 @@
 package com.nextstep.nextstepracingcar.domain;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
-class Cars {
+public class Cars {
 
     private static final int RANDOM_MAX_NUM = 10;
 
@@ -20,7 +22,7 @@ class Cars {
 
     private void playingGame(List<Car> cars) {
         for (Car car : cars) {
-            car.move.plusMove(random.nextInt(RANDOM_MAX_NUM));
+            car.getMove().plusMove(random.nextInt(RANDOM_MAX_NUM));
         }
     }
 
@@ -28,4 +30,12 @@ class Cars {
         return Collections.unmodifiableList(cars);
     }
 
+    public List<Car> getWinner() {
+        List<Car> winner = cars.stream()
+                .max(Comparator.comparing((car -> car.getMove().getPosition())))
+                .stream().collect(Collectors.toList());
+        ;
+
+        return winner;
+    }
 }
