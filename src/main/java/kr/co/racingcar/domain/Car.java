@@ -1,8 +1,8 @@
 package kr.co.racingcar.domain;
 
-public class Car {
-    private static final int NAME_MAX_LENGTH = 5;
+import kr.co.racingcar.view.InputView;
 
+public class Car {
     private final String carName;
     private int position;
 
@@ -14,8 +14,8 @@ public class Car {
         this.position = 0;
     }
 
-    public void move() {
-        this.position += 1;
+    public void move(CarSpeedStrategy speedStrategy) {
+        this.position += speedStrategy.speed();
     }
 
     public String getCarName() {
@@ -27,8 +27,8 @@ public class Car {
     }
 
     private void validateCarNameLength(String input) {
-        if (input.length() > NAME_MAX_LENGTH) {
-            throw new IllegalArgumentException(String.format("자동차 이름은 %s글자를 넘을 수 없습니다.", NAME_MAX_LENGTH));
+        if (input.length() > InputView.NAME_MAX_LENGTH) {
+            throw new IllegalArgumentException(String.format("자동차 이름은 %s글자를 넘을 수 없습니다.", InputView.NAME_MAX_LENGTH));
         }
     }
 

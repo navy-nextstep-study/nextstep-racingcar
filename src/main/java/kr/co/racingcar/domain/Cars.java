@@ -3,23 +3,25 @@ package kr.co.racingcar.domain;
 import kr.co.racingcar.view.InputView;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Cars {
-    private List<Car> cars;
+    private final List<Car> cars;
 
     public Cars(String carsNames) {
         this.cars = extractCarName(carsNames);
     }
 
     public List<Car> getCars() {
-        return this.cars;
+        return Collections.unmodifiableList(this.cars);
     }
 
-    public void move() {
+    public void move(CarMovingStrategy movingStrategy,
+                     CarSpeedStrategy speedStrategy) {
         this.cars.stream()
-                .filter(car -> RandomMove.accel())
-                .forEach(Car::move);
+                .filter(car -> movingStrategy.movable())
+                .forEach(car -> car.move(speedStrategy));
     }
 
     private List<Car> extractCarName(String carsNames) {

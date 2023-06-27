@@ -1,6 +1,7 @@
 package kr.co.racingcar.domain.car.entity;
 
 import kr.co.racingcar.domain.Car;
+import kr.co.racingcar.domain.OneSpeedStrategy;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -11,12 +12,12 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 class CarTest {
 
     @Test
-    void move_이동_PASS(){
+    void move_이동_PASS() {
         //given
         Car car = new Car("car");
 
         //when
-        car.move();
+        car.move(new OneSpeedStrategy());
 
         assertThat(car.getPosition()).isEqualTo(1);
     }
