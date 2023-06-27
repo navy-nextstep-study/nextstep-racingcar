@@ -10,9 +10,9 @@ import kr.co.racingcar.view.OutputView;
 public class RacingCarController {
 
     public void run() {
-        Cars cars = new Cars(InputView.inputCarName());
+        final Cars cars = new Cars(InputView.inputCarName());
         int count = InputView.inputCount();
-        RacingCar racingCar = new RacingCar(cars);
+        final RacingCar racingCar = new RacingCar(cars);
 
         while (count != OutputView.GAME_END) {
             racingCar.play(new RandomMovingStrategy(), new OneSpeedStrategy());

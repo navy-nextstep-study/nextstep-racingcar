@@ -27,7 +27,7 @@ public class Cars {
     }
 
     public List<Car> findWinners() {
-        List<Car> winners = new ArrayList<>(this.cars).stream()
+        final List<Car> winners = new ArrayList<>(this.cars).stream()
                 .sorted(Comparator.comparing(Car::getPosition).reversed())
                 .toList();
         int winnerPosition = winners.get(0).getPosition();

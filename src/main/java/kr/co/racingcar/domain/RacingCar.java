@@ -2,7 +2,7 @@ package kr.co.racingcar.domain;
 
 public class RacingCar {
 
-    private Cars cars;
+    private final Cars cars;
 
     public RacingCar(Cars cars) {
         this.cars = cars;

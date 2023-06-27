@@ -30,8 +30,8 @@ public class OutputView {
 
     public static void outputWinner(List<Car> winners) {
 
-        for(int i=0; i<winners.size(); i++){
-            System.out.print("[" + winners.get(i).getCarName() + "] ");
+        for (Car winner : winners) {
+            System.out.print("[" + winner.getCarName() + "] ");
         }
 
         System.out.println("가 최종 우승했습니다.");
