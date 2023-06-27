@@ -1,13 +1,16 @@
 package kr.co.racingcar.domain.car.entity;
 
+import kr.co.racingcar.domain.Car;
 import kr.co.racingcar.domain.Cars;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 class CarsTest {
     @Test
-    void 정상적인_이름을_가진_자동차들을_추출한다() {
+    void 정상적인_이름을_가진_자동차들을_추출한다_PASS() {
         //given & when
         Cars cars = new Cars("one1,two2,three");
 
@@ -44,5 +47,25 @@ class CarsTest {
         assertThat(cars.getCars().get(0).getPosition()).isZero();
         assertThat(cars.getCars().get(1).getPosition()).isZero();
         assertThat(cars.getCars().get(2).getPosition()).isZero();
+    }
+
+    @Test
+    void findWinners_우승자를_조회_PASS() {
+        //given
+        Cars cars = new Cars(List.of(
+                new Car("one", 7),
+                new Car("two", 7),
+                new Car("three", 2),
+                new Car("three", 5),
+                new Car("three", 1)
+        ));
+
+        //when
+        List<Car> actual = cars.findWinners();
+
+        //then
+        assertThat(actual.get(0).getCarName()).isEqualTo("one");
+        assertThat(actual.get(1).getCarName()).isEqualTo("two");
+        assertThat(actual).hasSize(2);
     }
 }

@@ -14,6 +14,15 @@ public class Car {
         this.position = 0;
     }
 
+    public Car(String carName,
+               int position) {
+        validateCarNameNull(carName);
+        validateCarNameBlank(carName);
+        validateCarNameLength(carName);
+        this.carName = carName;
+        this.position = position;
+    }
+
     public void move(CarSpeedStrategy speedStrategy) {
         this.position += speedStrategy.speed();
     }

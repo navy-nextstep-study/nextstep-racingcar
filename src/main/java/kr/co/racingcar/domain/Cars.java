@@ -2,15 +2,17 @@ package kr.co.racingcar.domain;
 
 import kr.co.racingcar.view.InputView;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Cars {
     private final List<Car> cars;
 
     public Cars(String carsNames) {
         this.cars = extractCarName(carsNames);
+    }
+
+    public Cars(List<Car> cars) {
+        this.cars = cars;
     }
 
     public List<Car> getCars() {
@@ -22,6 +24,16 @@ public class Cars {
         this.cars.stream()
                 .filter(car -> movingStrategy.movable())
                 .forEach(car -> car.move(speedStrategy));
+    }
+
+    public List<Car> findWinners() {
+        List<Car> winners = new ArrayList<>(this.cars).stream()
+                .sorted(Comparator.comparing(Car::getPosition).reversed())
+                .toList();
+        int winnerPosition = winners.get(0).getPosition();
+        return winners.stream()
+                .filter(car -> car.getPosition() == winnerPosition)
+                .toList();
     }
 
     private List<Car> extractCarName(String carsNames) {
