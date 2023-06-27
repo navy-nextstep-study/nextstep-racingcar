@@ -16,6 +16,12 @@ public class Cars {
         return this.cars;
     }
 
+    public void move() {
+        this.cars.stream()
+                .filter(car -> RandomMove.accel())
+                .forEach(Car::move);
+    }
+
     private List<Car> extractCarName(String carsNames) {
         return Arrays.stream(carsNames.split(InputView.DELIMINATOR))
                 .map(Car::new)
