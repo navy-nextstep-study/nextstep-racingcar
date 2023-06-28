@@ -1,6 +1,6 @@
 ## 요구사항
 - [ ] 자동차는 이름을 가지고 있다.
-    - [ ] 자동차 이름을 5자를 초과 할 수 없다. `Name#validNameLength`
+    - [X] 자동차 이름을 5자를 초과 할 수 없다. `Name#validNameLength`
 - [ ] 자동차 출력 시 자동차 이름을 같이 출력한다. `Getter` 사용하기.
 - [ ] 자동차 입력은 쉼표로 구분한다.
   - [ ] 자동차 이름 입력 InputView#inputCarName()
