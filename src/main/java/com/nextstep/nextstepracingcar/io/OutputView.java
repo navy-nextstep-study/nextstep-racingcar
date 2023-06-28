@@ -23,8 +23,6 @@ public final class OutputView {
         for (Car car : cars) {
             System.out.println(car.getName().getName() + " : " + "-".repeat(car.getMove().getPosition()));
         }
-
-        System.out.println("\n");
     }
 
     public static void gameWinnerGuide(List<Car> winner) {

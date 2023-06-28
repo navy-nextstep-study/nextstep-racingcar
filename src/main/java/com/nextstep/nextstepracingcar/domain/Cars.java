@@ -3,6 +3,7 @@ package com.nextstep.nextstepracingcar.domain;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 import java.util.stream.Collectors;
 
@@ -16,11 +17,10 @@ public class Cars {
 
 
     public Cars(List<Car> cars) {
-        playingGame(cars);
         this.cars = cars;
     }
 
-    private void playingGame(List<Car> cars) {
+    public void playingGame() {
         for (Car car : cars) {
             car.getMove().plusMove(random.nextInt(RANDOM_MAX_NUM));
         }
@@ -31,11 +31,13 @@ public class Cars {
     }
 
     public List<Car> getWinner() {
-        List<Car> winner = cars.stream()
-                .max(Comparator.comparing((car -> car.getMove().getPosition())))
-                .stream().collect(Collectors.toList());
-        ;
+        Optional<Car> winnerCar = cars.stream()
+                .max(Comparator.comparing((car -> car.getMove().getPosition())));
 
-        return winner;
+        List<Car> winner = cars.stream()
+                .filter(car -> car.getMove().getPosition() == winnerCar.get().getMove().getPosition())
+                .collect(Collectors.toList());
+
+        return Collections.unmodifiableList(winner);
     }
 }

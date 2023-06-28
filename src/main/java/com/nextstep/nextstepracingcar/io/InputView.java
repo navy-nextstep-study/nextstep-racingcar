@@ -18,7 +18,7 @@ public final class InputView {
         return scanner.nextLine();
     }
 
-    public static String[] parsing(String carNameList) {
+    private static String[] parsing(String carNameList) {
         return carNameList.split(",");
     }
 }

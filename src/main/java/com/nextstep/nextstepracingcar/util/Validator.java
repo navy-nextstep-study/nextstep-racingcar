@@ -20,6 +20,15 @@ public class Validator {
 
     public static void validateNumber(String inputNum) {
         isNumber(inputNum);
+        isZeroOrMinusNumber(inputNum);
+    }
+
+    private static void isZeroOrMinusNumber(String inputNum) {
+        int number = Integer.parseInt(inputNum);
+
+        if (number < 1) {
+            throw new IllegalArgumentException("숫자는 0이하일 수 없습니다.");
+        }
     }
 
     private static void isNumber(String inputNum) {
