@@ -4,8 +4,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomGeneratorNumber {
 
+    private static final ThreadLocalRandom RANDOM = ThreadLocalRandom.current();
+
     public static int generateRandomNumberFrom() {
-        ThreadLocalRandom random = ThreadLocalRandom.current();
-        return random.nextInt(9);
+        return RANDOM.nextInt(9);
     }
 }
