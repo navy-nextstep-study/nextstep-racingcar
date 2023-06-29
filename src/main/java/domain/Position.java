@@ -2,13 +2,13 @@ package domain;
 
 public class Position {
 
-    private int position;
+    private int carPosition;
 
     public void addPosition() {
-        position++;
+        carPosition++;
     }
 
     public int getPosition() {
-        return position;
+        return carPosition;
     }
 }
