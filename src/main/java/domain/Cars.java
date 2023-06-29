@@ -2,8 +2,8 @@ package domain;
 
 import util.RandomGeneratorNumber;
 
+import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Cars {
     private List<Car> cars;
@@ -13,7 +13,7 @@ public class Cars {
     }
 
     public List<Car> getCars() {
-        return cars;
+        return Collections.unmodifiableList(cars);
     }
 
     public void move() {
