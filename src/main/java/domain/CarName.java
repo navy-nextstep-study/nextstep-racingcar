@@ -15,4 +15,8 @@ public class CarName {
             throw new IllegalArgumentException(NAME_LENGTH_ERROR_MSG);
         }
     }
+
+    public String getName() {
+        return name;
+    }
 }
