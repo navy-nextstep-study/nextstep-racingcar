@@ -1,5 +1,6 @@
 package kr.co.racingcar.domain;
 
+import kr.co.racingcar.domain.CarSpeedStrategy;
 import kr.co.racingcar.view.InputView;
 
 public class Car {

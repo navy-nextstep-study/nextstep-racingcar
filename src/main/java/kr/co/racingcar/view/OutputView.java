@@ -28,9 +28,9 @@ public class OutputView {
         System.out.println();
     }
 
-    public static void outputWinner(List<Car> winners) {
+    public static void outputWinner(Cars winners) {
 
-        for (Car winner : winners) {
+        for (Car winner : winners.getCars()) {
             System.out.print("[" + winner.getCarName() + "] ");
         }
 

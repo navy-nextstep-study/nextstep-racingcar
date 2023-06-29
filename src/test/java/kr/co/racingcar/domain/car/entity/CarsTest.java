@@ -61,11 +61,11 @@ class CarsTest {
         ));
 
         //when
-        List<Car> actual = cars.findWinners();
+        Cars actual = cars.findWinners();
 
         //then
-        assertThat(actual.get(0).getCarName()).isEqualTo("one");
-        assertThat(actual.get(1).getCarName()).isEqualTo("two");
-        assertThat(actual).hasSize(2);
+        assertThat(actual.getCars().get(0).getCarName()).isEqualTo("one");
+        assertThat(actual.getCars().get(1).getCarName()).isEqualTo("two");
+        assertThat(actual.getCars()).hasSize(2);
     }
 }

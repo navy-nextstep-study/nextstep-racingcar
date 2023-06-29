@@ -26,14 +26,14 @@ public class Cars {
                 .forEach(car -> car.move(speedStrategy));
     }
 
-    public List<Car> findWinners() {
+    public Cars findWinners() {
         final List<Car> winners = new ArrayList<>(this.cars).stream()
                 .sorted(Comparator.comparing(Car::getPosition).reversed())
                 .toList();
         int winnerPosition = winners.get(0).getPosition();
-        return winners.stream()
+        return new Cars(winners.stream()
                 .filter(car -> car.getPosition() == winnerPosition)
-                .toList();
+                .toList());
     }
 
     private List<Car> extractCarName(String carsNames) {
