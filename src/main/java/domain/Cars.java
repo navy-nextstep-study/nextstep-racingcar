@@ -1,5 +1,7 @@
 package domain;
 
+import util.RandomGeneratorNumber;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,6 +14,10 @@ public class Cars {
 
     public List<Car> getCars() {
         return cars;
+    }
+
+    public void move() {
+        cars.forEach((car) -> car.move(RandomGeneratorNumber.generateRandomNumberFrom()));
     }
 
     public List<Car> calculateWinnerCar() {
