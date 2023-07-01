@@ -12,11 +12,7 @@ public class Move {
     }
 
     private boolean checkForwardCondition(int randomNum) {
-        if (randomNum >= MOVE_REFERENCE_VALUE) {
-            return true;
-        }
-
-        return false;
+        return randomNum >= MOVE_REFERENCE_VALUE;
     }
 
     public int getPosition() {
