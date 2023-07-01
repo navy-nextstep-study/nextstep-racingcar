@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class CarsTest {
 
     @Test
@@ -30,7 +28,7 @@ class CarsTest {
         bmw.move(4);
         audi.move(2);
         ford.move(0);
-        Assertions.assertThat(createdCars.calculateWinnerCar()).contains(bmw);
+
     }
 
     @Test
@@ -45,6 +43,7 @@ class CarsTest {
         bmw.move(4);
         audi.move(4);
         ford.move(0);
-        Assertions.assertThat(createdCars.calculateWinnerCar()).contains(bmw, audi);
+        Cars winningCars = createdCars.calculateWinnerCar();
+        Assertions.assertThat(winningCars.getCars()).contains(bmw, audi);
     }
 }

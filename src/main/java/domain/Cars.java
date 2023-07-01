@@ -20,14 +20,23 @@ public class Cars {
         cars.forEach((car) -> car.move(RandomGeneratorNumber.generateRandomNumberFrom()));
     }
 
-    public List<Car> calculateWinnerCar() {
-        int maxPosition = cars.stream()
-                .mapToInt(Car::getCarPosition)
-                .max()
-                .orElse(0);
+    public Cars calculateWinnerCar() {
+        int maxPosition = calculateWinningPosition();
+        List<Car> winningCarList = getWinningCarList(maxPosition);
 
+        return new Cars(winningCarList);
+    }
+
+    private List<Car> getWinningCarList(int maxPosition) {
         return cars.stream()
                 .filter(car -> car.getCarPosition() == maxPosition)
                 .toList();
+    }
+
+    private int calculateWinningPosition() {
+        return cars.stream()
+                .mapToInt(Car::getCarPosition)
+                .max()
+                .orElse(0);
     }
 }

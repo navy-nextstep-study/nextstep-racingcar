@@ -3,7 +3,6 @@ package view;
 import domain.Car;
 import domain.Cars;
 
-import java.util.List;
 import java.util.StringJoiner;
 
 public class OutputView {
@@ -31,10 +30,10 @@ public class OutputView {
         System.out.println(stringBuilder);
     }
 
-    public void displayResult(List<Car> winners) {
+    public void displayResult(Cars cars) {
         StringBuilder stringBuilder = new StringBuilder();
         StringJoiner stringJoiner = new StringJoiner(", ");
-        for (Car winner : winners) {
+        for (Car winner : cars.getCars()) {
             stringJoiner.add(winner.getCarName());
         }
         stringBuilder.append(stringJoiner);

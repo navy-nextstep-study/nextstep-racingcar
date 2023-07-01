@@ -31,8 +31,8 @@ public class CarSimulator {
             outputView.displayPerPlayResult(cars);
         }
 
-        List<Car> winner = cars.calculateWinnerCar();
-        outputView.displayResult(winner);
+        Cars winnerCars = cars.calculateWinnerCar();
+        outputView.displayResult(winnerCars);
     }
 
     private List<Car> getCarNames() {
