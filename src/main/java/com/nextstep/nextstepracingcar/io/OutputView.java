@@ -2,6 +2,7 @@ package com.nextstep.nextstepracingcar.io;
 
 
 import com.nextstep.nextstepracingcar.domain.Car;
+import com.nextstep.nextstepracingcar.domain.Cars;
 import java.util.List;
 
 public final class OutputView {
@@ -25,10 +26,10 @@ public final class OutputView {
         }
     }
 
-    public static void gameWinnerGuide(List<Car> winner) {
+    public static void gameWinnerGuide(Cars cars) {
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (Car car : winner) {
+        for (Car car : cars.getCars()) {
             stringBuilder.append(car.getName().getName());
             stringBuilder.append(" ");
         }

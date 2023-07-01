@@ -1,6 +1,5 @@
 package com.nextstep.nextstepracingcar.domain;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -13,31 +12,29 @@ public class Cars {
 
     private static final Random random = new Random();
 
-    private final List<Car> cars;
+    private final List<Car> carList;
 
 
-    public Cars(List<Car> cars) {
-        this.cars = cars;
+    public Cars(List<Car> carList) {
+        this.carList = carList;
     }
 
     public void playingGame() {
-        for (Car car : cars) {
+        for (Car car : carList) {
             car.getMove().plusMove(random.nextInt(RANDOM_MAX_NUM));
         }
     }
 
     public List<Car> getCars() {
-        return Collections.unmodifiableList(cars);
+        return carList;
     }
 
-    public List<Car> getWinner() {
-        Optional<Car> winnerCar = cars.stream()
+    public Cars getWinner() {
+        Optional<Car> winnerCar = carList.stream()
                 .max(Comparator.comparing((car -> car.getMove().getPosition())));
 
-        List<Car> winner = cars.stream()
+        return new Cars(carList.stream()
                 .filter(car -> car.getMove().getPosition() == winnerCar.get().getMove().getPosition())
-                .collect(Collectors.toList());
-
-        return Collections.unmodifiableList(winner);
+                .collect(Collectors.toList()));
     }
 }
