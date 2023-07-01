@@ -1,4 +1,4 @@
-import model.CarSimulator;
+import controller.CarSimulator;
 
 public class GameApp {
     public static void main(String[] args) {
