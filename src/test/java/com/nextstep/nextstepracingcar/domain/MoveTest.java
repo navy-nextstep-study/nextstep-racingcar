@@ -12,7 +12,7 @@ public class MoveTest {
     @Test
     @DisplayName("움직임 수치에 대한 move 객체가 정상적으로 생성된다.")
     void 정상적인_경우1() {
-        assertThat(new Move());
+        assertThat(new Position());
     }
 
     @ParameterizedTest
@@ -20,13 +20,13 @@ public class MoveTest {
     @DisplayName("랜덤으로 들어온 값이 4이상일 경우 move값이 증가한다.")
     void 정상적인_경우2(int randomNum) {
         // given
-        Move move = new Move();
+        Position position = new Position();
 
         // when
-        move.plusMove(randomNum);
+        position.plusMove(randomNum);
 
         // then
-        assertThat(move.getPosition()).isEqualTo((byte) 1);
+        assertThat(position.getMove()).isEqualTo(1);
     }
 
     @ParameterizedTest
@@ -34,13 +34,13 @@ public class MoveTest {
     @DisplayName("랜덤으로 들어온 값이 4미만일 경우 move값이 증가하지 않는다.")
     void 정상적인_경우3(int randomNum) {
         // given
-        Move move = new Move();
+        Position position = new Position();
 
         // when
-        move.plusMove(randomNum);
+        position.plusMove(randomNum);
 
         // then
-        assertThat(move.getPosition()).isEqualTo(0);
+        assertThat(position.getMove()).isEqualTo(0);
     }
 }
 

@@ -12,11 +12,11 @@ public class CarsTest {
     @DisplayName("자동차들의 정보를 가지고 있는 객체가 정상적으로 생성된다.")
     void 정상적인_케이스1() {
         List<Car> carlist = List.of(
-                new Car(new Name("benz"), new Move()),
-                new Car(new Name("kia"), new Move()),
-                new Car(new Name("volvo"), new Move()),
-                new Car(new Name("ssang"), new Move()),
-                new Car(new Name("toyot"), new Move())
+                new Car(new Name("benz"), new Position()),
+                new Car(new Name("kia"), new Position()),
+                new Car(new Name("volvo"), new Position()),
+                new Car(new Name("ssang"), new Position()),
+                new Car(new Name("toyot"), new Position())
         );
 
         assertThat(new Cars(carlist));
@@ -27,11 +27,11 @@ public class CarsTest {
     void 정상적인_케이스2() {
         // given
         List<Car> carlist = List.of(
-                new Car(new Name("benz"), new Move()),
-                new Car(new Name("kia"), new Move()),
-                new Car(new Name("volvo"), new Move()),
-                new Car(new Name("ssang"), new Move()),
-                new Car(new Name("toyot"), new Move())
+                new Car(new Name("benz"), new Position()),
+                new Car(new Name("kia"), new Position()),
+                new Car(new Name("volvo"), new Position()),
+                new Car(new Name("ssang"), new Position()),
+                new Car(new Name("toyot"), new Position())
         );
 
         // when
@@ -39,7 +39,7 @@ public class CarsTest {
 
         // then
         for (Car car : cars.getCars()) {
-            assertThat(car.getMove().getPosition()).isIn(0, 1);
+            assertThat(car.getPostion().getMove()).isIn(0, 1);
         }
     }
 }

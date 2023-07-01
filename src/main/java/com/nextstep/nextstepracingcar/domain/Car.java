@@ -3,18 +3,18 @@ package com.nextstep.nextstepracingcar.domain;
 public class Car {
 
     private final Name name;
-    private final Move move;
+    private final Position position;
 
-    public Car(Name name, Move move) {
+    public Car(Name name, Position position) {
         this.name = name;
-        this.move = move;
+        this.position = position;
     }
 
     public Name getName() {
         return name;
     }
 
-    public Move getMove() {
-        return move;
+    public Position getPostion() {
+        return position;
     }
 }

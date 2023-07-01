@@ -20,7 +20,7 @@ public class Cars {
 
     public void playingGame() {
         for (Car car : carList) {
-            car.getMove().plusMove(random.nextInt(RANDOM_MAX_NUM));
+            car.getPostion().plusMove(random.nextInt(RANDOM_MAX_NUM));
         }
     }
 
@@ -30,10 +30,10 @@ public class Cars {
 
     public Cars getWinner() {
         Optional<Car> winnerCar = carList.stream()
-                .max(Comparator.comparing((car -> car.getMove().getPosition())));
+                .max(Comparator.comparing((car -> car.getPostion().getMove())));
 
         return new Cars(carList.stream()
-                .filter(car -> car.getMove().getPosition() == winnerCar.get().getMove().getPosition())
+                .filter(car -> car.getPostion().getMove() == winnerCar.get().getPostion().getMove())
                 .collect(Collectors.toList()));
     }
 }

@@ -22,7 +22,7 @@ public final class OutputView {
         System.out.println("\n실행 결과");
 
         for (Car car : cars) {
-            System.out.println(car.getName().getName() + " : " + "-".repeat(car.getMove().getPosition()));
+            System.out.println(car.getName().getName() + " : " + "-".repeat(car.getPostion().getMove()));
         }
     }
 

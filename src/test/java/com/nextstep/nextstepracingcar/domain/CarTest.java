@@ -13,7 +13,7 @@ public class CarTest {
     @ValueSource(strings = {"volvo", "kia", "benz"})
     @DisplayName("자동차 객체가 정상적으로 생성된다.")
     void 정상적인_경우1(String name) {
-        assertThat(new Car(new Name(name), new Move()));
+        assertThat(new Car(new Name(name), new Position()));
     }
 
     @ParameterizedTest
@@ -22,14 +22,14 @@ public class CarTest {
     void 정상적인_경우2(String carName, int randomNum) {
         // given
         Name name = new Name(carName);
-        Move move = new Move();
-        Car car = new Car(name, move);
+        Position position = new Position();
+        Car car = new Car(name, position);
 
         // when
-        car.getMove().plusMove(randomNum);
+        car.getPostion().plusMove(randomNum);
 
         // then
-        assertThat(car.getMove().getPosition()).isEqualTo(1);
+        assertThat(car.getPostion().getMove()).isEqualTo(1);
     }
 
 }

@@ -2,8 +2,8 @@ package com.nextstep.nextstepracingcar;
 
 import com.nextstep.nextstepracingcar.domain.Car;
 import com.nextstep.nextstepracingcar.domain.Cars;
-import com.nextstep.nextstepracingcar.domain.Move;
 import com.nextstep.nextstepracingcar.domain.Name;
+import com.nextstep.nextstepracingcar.domain.Position;
 import com.nextstep.nextstepracingcar.io.InputView;
 import com.nextstep.nextstepracingcar.io.OutputView;
 import com.nextstep.nextstepracingcar.util.Validator;
@@ -46,7 +46,7 @@ public class RacingGameApplication {
         List<Car> cars = new ArrayList<>();
 
         for (String carName : carNames) {
-            cars.add(new Car(new Name(carName), new Move()));
+            cars.add(new Car(new Name(carName), new Position()));
         }
 
         return cars;

@@ -1,13 +1,13 @@
 package com.nextstep.nextstepracingcar.domain;
 
-public class Move {
+public class Position {
 
     private final static byte MOVE_REFERENCE_VALUE = 4;
-    private int position = 0;
+    private int move = 0;
 
     public void plusMove(int randomNum) {
         if (checkForwardCondition(randomNum)) {
-            this.position++;
+            this.move++;
         }
     }
 
@@ -15,7 +15,7 @@ public class Move {
         return randomNum >= MOVE_REFERENCE_VALUE;
     }
 
-    public int getPosition() {
-        return position;
+    public int getMove() {
+        return move;
     }
 }
