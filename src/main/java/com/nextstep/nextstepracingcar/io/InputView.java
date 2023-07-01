@@ -10,12 +10,12 @@ public final class InputView {
     }
 
     public static String[] inputCars() {
-        String carNameList = scanner.nextLine();
+        String carNameList = SCANNER.nextLine();
         return parsing(carNameList);
     }
 
     public static String inputNumber() {
-        return scanner.nextLine();
+        return SCANNER.nextLine();
     }
 
     private static String[] parsing(String carNameList) {
